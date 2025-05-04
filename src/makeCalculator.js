@@ -11,7 +11,9 @@ function makeCalculator() {
   calculator.result = 0;
 
   calculator.operate = function (operation, num) {
-    operation(num);
+    if (typeof operation === 'function') {
+      operation(num);
+    }
 
     return this;
   };
